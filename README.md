@@ -3,6 +3,7 @@
 ```sh
 $ mise install
 $ pnpm install
+$ pnpm run load-seed-data
 ```
 
 Launch the project in dev mode:

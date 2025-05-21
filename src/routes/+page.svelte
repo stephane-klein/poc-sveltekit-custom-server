@@ -1,5 +1,20 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+    import { version, dev } from '$app/environment';
 
-<p>blabla aaa</p>
+    let { data } = $props();
+</script>
 
+<p>SvelteKit version: {version}</p>
+
+<p>Environment: {dev? 'dev' : 'prod'}</p>
+
+<table>
+    <tbody>
+        {#each data.posts as row (row.id)}
+            <tr>
+                <td>{row.id}</td>
+                <td>{row.title}</td>
+            </tr>
+        {/each}
+    </tbody>
+</table>

@@ -1,6 +1,9 @@
 import express from 'express';
+import { migrate } from '@lib/server/db.js';
 
 const isDev = process.env.ENV !== 'production';
+
+migrate();
 
 async function createServer() {
     const app = express();
