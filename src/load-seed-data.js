@@ -5,6 +5,7 @@ import db, { migrate } from '@lib/server/db.js';
 
 migrate();
 
+console.log('Start load seed data...');
 db().exec(fs.readFileSync(
     path.join(
         path.dirname(fileURLToPath(import.meta.url)),
@@ -12,4 +13,4 @@ db().exec(fs.readFileSync(
     ),
     'utf8'
 ));
-
+console.log('seed data loaded');
