@@ -22,7 +22,7 @@ async function createServer() {
 
         app.use(vite.middlewares);
     } else {
-        const { handler } = await import('../build/handler.js');
+        const { handler } = await import('./handler.js');
         app.use(handler);
     }
 

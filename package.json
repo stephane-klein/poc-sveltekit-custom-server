@@ -3,8 +3,8 @@
     "type": "module",
     "scripts": {
         "dev": "ENV=development node --loader esm-module-alias/loader --no-warnings src/server.js",
-        "build": "vite build",
-        "preview": "ENV=production node --loader esm-module-alias/loader --no-warnings src/server.js",
+        "build": "vite build; cp src/server.js build/; cp src/load-seed-data.js build/",
+        "preview": "ENV=production node --loader esm-module-alias/loader --no-warnings build/server.js",
         "load-seed-data": "ENV=development node --loader esm-module-alias/loader --no-warnings src/load-seed-data.js"
     },
     "devDependencies": {
