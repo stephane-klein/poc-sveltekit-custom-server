@@ -1,5 +1,16 @@
 # POC SvelteKit custom server
 
+Implementation of a [Custom Server](https://svelte.dev/docs/kit/adapter-node#Custom-server) for a SvelteKit 2 [SSR](https://svelte.dev/docs/kit/glossary#SSR) project with [Hydration](https://svelte.dev/docs/kit/glossary#Hydration).
+
+Here's what this example project contains:
+
+- Integration of [SQLite](https://en.wikipedia.org/wiki/SQLite) database.
+- At each server startup, the model migration scripts [`sqls/migrations/*.sql`](sqls/migrations/) are automatically executed.
+  This applies both in development mode (`pnpm run dev`) and in production mode (`pnpm run build; pnpm run preview`).  
+  This model migration system is powered by [`@beenotung/better-sqlite3-helper`](https://github.com/beenotung/better-sqlite3-schema).
+- Integration of a scheduler based on "[Cron for Node.js](https://github.com/kelektiv/node-cron/)".
+- Seed data loading script.
+
 ```sh
 $ mise install
 $ pnpm install
