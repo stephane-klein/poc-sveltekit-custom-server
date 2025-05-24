@@ -16,9 +16,12 @@
     },
     "dependencies": {
         "@beenotung/better-sqlite3-helper": "4.1.7",
+        "atomic-sleep": "1.0.0",
         "better-sqlite3": "11.10.0",
+        "cron": "4.3.0",
         "esm-module-alias": "2.2.1",
-        "express": "5.1.0"
+        "express": "5.1.0",
+        "node-cron": "4.0.7"
     },
     "pnpm": {
         "onlyBuiltDependencies": [
@@ -27,6 +30,6 @@
         ]
     },
     "aliases": {
-      "@lib": "src/lib/"
+        "@lib": "src/lib/"
     }
 }

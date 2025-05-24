@@ -1,9 +1,21 @@
 import express from 'express';
-import { migrate } from '@lib/server/db.js';
+import cron from 'node-cron';
+import sleep from 'atomic-sleep';
+import db, { migrate } from '@lib/server/db.js';
 
 const isDev = process.env.ENV !== 'production';
 
 migrate();
+
+cron.schedule(
+    '* * * * *',
+    async () => {
+        console.log('Start task...');
+        sleep(1000);
+        console.log(db().query('SELECT * FROM posts'));
+        console.log('Task executed');
+    }
+);
 
 async function createServer() {
     const app = express();
