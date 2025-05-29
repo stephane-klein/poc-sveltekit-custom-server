@@ -11,6 +11,8 @@ Here's what this example project contains:
 - Integration of a scheduler based on "[Cron for Node.js](https://github.com/kelektiv/node-cron/)".
 - Seed data loading script.
 
+**Important information**: This technique is no longer necessary [since SvelteKit version 2.10 released in December 2024](https://github.com/sveltejs/kit/discussions/13841#discussioncomment-13306394). I recommend using the [Shared hooks init](https://svelte.dev/docs/kit/hooks#Shared-hooks-init) feature instead.
+
 ```sh
 $ mise install
 $ pnpm install
